@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sort Array in Descending Order</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin: 50px;
+      }
+      input,
+      button {
+        padding: 10px;
+        margin: 10px;
+        font-size: 16px;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+      }
+      button {
+        cursor: pointer;
+        background-color: #007bff;
+        color: white;
+        border: none;
+      }
+      button:hover {
+        background-color: #0056b3;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Sort Array in Descending Order</h1>
+    <input
+      type="text"
+      id="arrayInput"
+      placeholder="Enter numbers separated by commas"
+      style="width: 50%"
+    />
+    <br />
+    <button onclick="sortArray()">Sort</button>
+    <h3>Sorted Array:</h3>
+    <p id="output"></p>
+
+    <script>
+      function sortArray() {
+        // Get the input value (numbers separated by commas)
+        var input = document.getElementById("arrayInput").value;
+
+        // Convert input string into an array of numbers
+        var arr = input.split(",").map(function (item) {
+          return parseInt(item.trim(), 10); // Convert each item to an integer
+        });
+
+        // Sort the array in descending order
+        arr.sort(function (a, b) {
+          return b - a; // Compare elements in descending order
+        });
+
+        // Display the sorted array
+        document.getElementById("output").textContent = arr.join(", ");
+      }
+    </script>
+  </body>
+</html>
